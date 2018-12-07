@@ -1,0 +1,826 @@
+/* MOBILES */
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+
+@media screen and (max-height: 900px) {
+    .main-title {
+        font-size: 30px;
+
+        &__shadow {
+            font-size: 230px;
+        }
+    }
+
+    .section {
+        padding-top: 110px;
+    }
+
+    .onepage-pagination {
+        height: calc((40px) *7);
+
+        li {
+            a {
+                height: 40px;
+
+                &:before {
+                    height: 25px;
+                }
+            }
+        }
+    }
+
+    .table tbody tr:nth-child(n + 6) {
+        display: none;
+    }
+
+    .about-section .about__item_text {
+        font-size: 14px;
+    }
+
+    .about-section .about__item:nth-child(1) .about__item_img_bg {
+        height: 280px;
+    }
+
+    .about-section .about__item:nth-child(2) .about__item_img_bg {
+        height: 150px;
+    }
+
+    .about-section .about__item:nth-child(3) {
+        margin-top: 40px;
+
+        .about__item_img_bg {
+            height: 200px;
+        }
+    }
+
+    .skills-section .skills__bg {
+        height: 400px;
+        background-size: contain !important;
+    }
+
+    .skills-section .skills__title {
+        font-size: 28px;
+    }
+
+    .skills-section .skills__list li {
+        font-size: 20px;
+    }
+
+    .skills-section .skills__try-now {
+        margin-top: 30px;
+    }
+
+    .skills-section .skills__soon {
+        margin-top: 8px;
+    }
+
+    .roadmap__years {
+        margin-top: 60px;
+    }
+
+    .roadmap__timeline {
+        margin-top: 30px;
+    }
+
+    .roadmap__timeline_item {
+        height: 186px;
+    }
+
+    .roadmap__timeline_month_line {
+        height: 90px;
+    }
+
+    .create-platform-section .create-platform__content {
+        margin-top: 40px;
+    }
+
+    .create-platform-section .create-platform__title {
+        font-size: 38px;
+    }
+
+    .create-platform-section .create-platform__descr {
+        // margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .create-platform-section .create-platform__form-title {
+        margin-top: 30px;
+    }
+
+    .create-platform-section .create-platform__bg {
+        height: 100vh;
+    }
+
+    .team-section .team-banner {
+        height: 220px;
+    }
+
+    .team-section .team-list__item_name {
+        font-size: 16px;
+    }
+
+    .team-section .team-list__item_position {
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
+    .team-section .team-list__item_socials {
+        margin-top: 25px;
+    }
+}
+
+
+@media screen and (max-width: 1600px) {}
+
+
+@media screen and (max-width: 1280px) {
+    header {
+        height: 70px;
+    }
+
+    header .logo {
+        height: 70px;
+        min-width: 70px;
+        max-width: 70px;
+    }
+
+    header .header-menu-item {
+        padding: 0 13px;
+    }
+
+    .main-title__shadow {
+        font-size: 180px;
+    }
+
+    .team-section .team-banner {
+        background-size: 152%;
+    }
+
+    .team-section .team-list {
+        width: 80%;
+    }
+
+    .contacts-section .form-block__bg {
+        background-position: center !important;
+    }
+
+    .about-section .about__item_img span {
+        font-size: 38px;
+    }
+
+    .about-section .about__item:nth-child(1) {
+        width: 220px;
+    }
+
+    .about-section .about__item:nth-child(1) .about__item_text {
+        min-width: 100%;
+    }
+
+    .about-section .about__item:nth-child(1) .about__item_img {
+        width: 200px;
+    }
+
+    .about-section .about__item:nth-child(2) {
+        width: calc(100% - 220px);
+    }
+
+    .about-section .about__item:nth-child(2) .about__item_img_bg {
+        width: 290px;
+    }
+
+    .about-section .about__item:nth-child(2) .about__item_text {
+        width: 200px;
+    }
+
+    .about-section .about__item:nth-child(3) {
+        width: 450px;
+        position: static;
+    }
+
+    .about-section .about__item:nth-child(3) .about__item_img_bg {
+        width: 220px;
+    }
+
+    .skills-section .skills__title {
+        font-size: 24px;
+    }
+
+    .skills-section .skills__list li {
+        font-size: 16px;
+    }
+
+    .skills-section .skills__bg {
+        height: 350px;
+        width: 45%;
+        margin-right: 10px;
+    }
+
+    .skills-section .skills__content {
+        margin-top: 60px;
+        width: 55%;
+    }
+
+    .skills-section .skills__try-now,
+    .skills-section .skills__soon {
+        font-size: 14px;
+
+        b {
+            width: 35%;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+
+        span {
+            text-align: right;
+            width: 65%;
+
+        }
+    }
+
+    .roadmap__timeline .container {
+        padding: 0 20px;
+    }
+
+    .roadmap__years_item {
+        font-size: 68px;
+        margin-right: 50px;
+    }
+
+    .roadmap__timeline_text {
+        font-size: 12px;
+        width: 100%;
+        padding-right: 5px;
+    }
+
+    .roadmap__timeline_month {
+        font-size: 16px;
+    }
+
+    .roadmap__timeline_item {
+        width: 25% !important;
+    }
+
+    .create-platform-section .create-platform__title {
+        font-size: 28px;
+    }
+
+    .create-platform-section .create-platform__descr {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .create-platform-section .create-platform__form-title {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+
+    footer .footer-form {
+        width: 260px;
+
+        .form .input {
+            font-size: 16px;
+
+        }
+
+        .form .btn {
+            font-size: 16px;
+            width: 100%;
+            height: 50px;
+        }
+    }
+
+    footer .create-trading-btn {
+        font-size: 16px;
+    }
+
+    footer .footer-form__text {
+        font-size: 18px;
+        padding: 20px 20px 20px 20px;
+    }
+
+    footer .footer-form .form {
+        padding: 0 20px 20px;
+    }
+
+    .about-section .about__item_img span {
+        font-size: 28px;
+    }
+
+    .about-section .about__item:nth-child(1),
+    .about-section .about__item:nth-child(2),
+    .about-section .about__item:nth-child(3) {
+        width: 100%;
+        display: flex;
+        margin: 0 0 15px 0;
+        overflow: hidden;
+
+        .about__item_img {
+            min-width: 240px;
+            min-height: 60px;
+            height: 60px;
+            width: 240px;
+        }
+
+        .about__item_text {
+            width: calc(100% - 240px);
+            min-width: calc(100% - 240px);
+            padding-left: 20px;
+            // padding-right: 20px;
+        }
+
+        .about__item_img_bg {
+            width: 100%;
+        }
+    }
+
+    .create-platform-section .create-platform__form-title {
+        font-size: 16px;
+    }
+
+    .create-platform-section .create-platform__content {
+        width: 100%;
+        // margin-top: 0;
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    .create-platform__bg {
+        display: none;
+    }
+
+    .form .input,
+    .form .textarea {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    header .header-menu-item,
+    header .header-menu.right .header-menu-item {
+        padding: 0 6px;
+
+        a {
+            font-size: 12px;
+        }
+    }
+
+    .table tbody tr td,
+    .table thead th {
+        padding: 0 10px;
+
+        &:nth-child(n + 6) {
+            display: none;
+        }
+    }
+
+    .create-platform-section .create-platform .form {
+        display: block;
+    }
+
+    .team-section .team-list {
+        width: 90%;
+        .team-list__item_name, .team-list__item_position {
+            font-size: 14px;
+        }
+        .team-list__item_socials img {
+            width: 19px;
+            height: 19px;
+        }
+    }
+
+}
+
+//mobile
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .footer-form {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+
+
+    header {
+        height: 44px;
+
+        .header-menu {
+            display: none;
+        }
+        .header-create-platform  {
+            display: flex;
+        }
+        .burger {
+            display: block;
+        }
+    }
+
+    header .logo {
+        height: 44px;
+        min-width: 44px;
+        max-width: 44px;
+    }
+
+    .main-title {
+        font-size: 20px;
+    }
+
+    .section {
+        padding-top: 90px;
+    }
+
+    .roadmap-indicator, .team-indicator{
+        display: block;
+    }
+
+    .mobile-currency {
+        display: block;
+
+        &__title {
+            display: block;
+        }
+    }
+
+    .currencies-list {
+        margin-top: -5px;
+        position: absolute;
+        display: none;
+        right: 0;
+        width: 141px;
+        flex-wrap: wrap;
+        background-color: #e8e8e8;
+        z-index: 99;
+
+        li {
+            width: 100%;
+            margin-top: 10px;
+            text-align: right;
+            padding-right: 20px;
+            margin-left: 0;
+
+            &:first-child {
+                margin-top: 15px;
+            }
+
+            &:last-child {
+                margin-bottom: 15px;
+            }
+
+            &.active:after {
+                content: none;
+            }
+        }
+    }
+
+    .onepage-pagination {
+        right: 2px;
+        height: calc((25px) *7);
+
+        li {
+            a {
+                height: 25px;
+
+                &:before {
+                    height: 5px;
+                }
+            }
+        }
+    }
+
+    .secondary-title {
+        display: none;
+    }
+
+    .slick-slider {
+        display: none !important;
+    }
+
+    .main-title__shadow {
+        display: none;
+    }
+
+    .about-section .about__item {
+        float: none;
+
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+            width: 100%;
+            display: none;
+            margin: 0;
+            position: static;
+            overflow: visible;
+
+            &.active {
+                display: block;
+            }
+
+            .about__item_img {
+                width: 100%;
+                height: auto;
+
+                span {
+                    font-size: 32px;
+                }
+            }
+
+            .about__item_img_bg {
+                width: 100%;
+                height: 245px;
+            }
+
+            .about__item_text {
+                width: 100%;
+                min-width: 100%;
+                padding: 0;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .swipe-indicator {
+        display: flex;
+    }
+
+
+
+    .skills-section .skills__content {
+        padding: 0 20px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .skills-section .skills__title {
+        font-size: 16px;
+    }
+
+    .skills-section .skills__bg {
+        height: 186px;
+        margin: 20px auto 10px;
+        width: 100%;
+        background-position: center !important;
+    }
+
+    .skills-section .skills__list li {
+        font-size: 14px;
+    }
+
+    .skills-section .skills__try-now,
+    .skills-section .skills__soon {
+        font-size: 12px;
+
+        b {
+            width: 35%;
+            font-size: 16px;
+            margin-right: 15px;
+        }
+
+        span {
+            text-align: right;
+            width: 65%;
+
+        }
+    }
+
+    @media screen and (max-height: 620px) {
+
+        .skills-section .skills__bg {
+            height: 125px;
+        }
+        .about-section  .about__item{
+            &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                .about__item_img_bg {
+                    height: 140px;
+                }
+            }
+        }
+    }
+
+
+
+    .roadmap__years {
+        margin-top: 20px;
+    }
+
+    .roadmap__years_item {
+        font-size: 50px;
+        margin-right: 35px;
+    }
+
+    .roadmap__timeline {
+        overflow: hidden;
+        padding-bottom: 20px;
+
+        .container {
+            width: 1200px;
+        }
+
+        .roadmap__timeline_line {
+            width: 1200px;
+        }
+
+        .roadmap__timeline_text {
+            font-size: 14px;
+            width: 300px;
+        }
+
+        .roadmap__timeline_month {
+            font-size: 18px;
+        }
+    }
+
+    .create-platform-section .create-platform .form {
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 0;
+
+        .input {
+            width: 100%;
+        }
+
+        .input-error-text {
+            bottom: auto;
+            position: absolute;
+        }
+    }
+
+    .team-section .team-banner {
+        height: 150px;
+    }
+
+    .team-section .team-list {
+        width: 90%;
+    }
+    .team-section {
+        .scroller {
+            overflow: hidden;
+            &__content {
+                width: 1200px;
+            }
+        }
+        .team-banner {
+            height: 260px;
+        }
+        .team-list {
+            width: 75%;
+            justify-content: flex-start;
+        }
+
+        .team-list__item:first-child {
+            width: 254px;
+        }
+        .team-list__item:nth-child(2) {
+            width: 170px;
+        }
+        .team-list__item:nth-child(3) {
+            width: 185px;
+        }
+        .team-list__item:nth-child(4) {
+            width: 192px;
+        }
+    }
+
+    .team-section .team-list__item_name,
+    .team-section .team-list__item_position {
+        font-size: 14px;
+    }
+
+    .team-section .team-list__item_socials a {
+        margin-right: 5px;
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .form {
+        width: 50%;
+        padding-right: 30px;
+    }
+
+    .login-section,
+    .signup-section {
+        min-height: 450px;
+
+        .form-block__bg {
+            display: none;
+        }
+
+        .form-block .form {
+            width: 100%;
+            margin: 0;
+            padding: 0 20px;
+        }
+    }
+
+    .table thead th,
+    .table tbody tr td {
+        font-size: 12px;
+
+        &:nth-child(n + 4) {
+            display: none;
+        }
+    }
+
+    // .table tbody tr:nth-child(n + 6) {
+    //     display: table-cell;
+    // }
+
+
+    .contacts-section .form-block__bg {
+        display: none;
+    }
+
+    .contacts-section .form-block {
+        margin-top: 0;
+    }
+
+    .contacts-section .form {
+        margin: 0;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    .form .btn {
+        height: 44px;
+    }
+
+    // .form .input,
+    // .form .textarea {
+    //     font-size: 16px;
+    // }
+
+    .form .textarea {
+        height: 150px;
+    }
+
+    footer {
+        height: auto;
+    }
+
+    footer .footer-socials img {
+        width: 18px;
+        height: 18px;
+        margin-right: 18px;
+    }
+
+    footer .scroll-down img {
+        width: 30px;
+    }
+
+    footer .copyright {
+        // display: none
+        width: 108px;
+        visibility: hidden;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+
+    header {
+        .dropdown-menu {
+            width: 100%;
+            padding: 10px 0;
+        }
+    }
+
+    .main-btn {
+        width: 100%;
+    }
+
+    .team-section .team-banner {
+        background-position-y: 72%;
+    }
+
+    .team-section .team-banner {
+        height: 180px;
+    }
+    .skills-section .skills__bg {
+        height: 85px;
+    }
+    .about-section .about__item:nth-child(1) .about__item_text, .about-section .about__item:nth-child(2) .about__item_text, .about-section .about__item:nth-child(3) .about__item_text {
+        font-size: 12px;
+    }
+}
