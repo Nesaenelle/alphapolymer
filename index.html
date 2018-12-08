@@ -12,10 +12,21 @@
 </head>
 
 <body>
-    <div id="app">
-        {{Resources.products | translate}}
-<!--         <header>
-        </header> -->
+    <div id="app" v-cloak>
+
+        <ul>
+            <li @click="changeLang('ru')">RU</li>
+            <li @click="changeLang('ua')">UA</li>
+            <li @click="changeLang('en')">EN</li>
+        </ul>
+        <header>
+            <ul>
+                <li>{{Resources.products}}</li>
+                <li>{{Resources.about_company}}</li>
+                <li>{{Resources.partners}}</li>
+                <li>{{Resources.contacts}}</li>
+            </ul>
+        </header>
         <main class="main">
             <section class="main-section">
                 <!--                <div class="container">    
@@ -183,7 +194,7 @@
                 </div> -->
             </section>
             <section class="about-section" data-swipe id="about">
-<!--                 <div class="container">
+                <!--                 <div class="container">
                     <div class="main-title">WHY WE ARE BETTER THAN <br>ANOTHER 100000+ PLATFORMS? <div class="main-title__shadow" data-paralax="30">ABOUT</div>
                     </div>
                     <div class="about-list">
@@ -421,6 +432,7 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.3.3/rxjs.umd.min.js"></script>
     <script src="js/app.js"></script>
     <!--  <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.touchSwipe.min.js"></script>
