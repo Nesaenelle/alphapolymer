@@ -89,7 +89,7 @@
         topPos = 0,
         leftPos = 0,
         lastAnimation = 0,
-        quietPeriod = 200,
+        quietPeriod = 500,
         paginationList = "";
 
     $.fn.transformPage = function(settings, pos, index) {
@@ -331,41 +331,40 @@
       $('ul.onepage-pagination').html(paginationList);
     }
 
-    // if(window.location.hash != "" && window.location.hash != "#1") {
-    //   init_index =  window.location.hash.replace("#", "")
+    if(window.location.hash != "" && window.location.hash != "#1") {
+      init_index =  window.location.hash.replace("#", "")
 
-    //   if (parseInt(init_index) <= total && parseInt(init_index) > 0) {
-    //     $(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active")
-    //     $("body").addClass("viewing-page-"+ init_index)
-    //     if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
+      if (parseInt(init_index) <= total && parseInt(init_index) > 0) {
+        $(settings.sectionContainer + "[data-index='" + init_index + "']").addClass("active")
+        $("body").addClass("viewing-page-"+ init_index)
+        if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + init_index + "']").addClass("active");
 
-    //     next = $(settings.sectionContainer + "[data-index='" + (init_index) + "']");
-    //     if(next) {
-    //       next.addClass("active")
-    //       if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
-    //       $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
-    //       $("body").addClass("viewing-page-"+next.data("index"))
-    //       if (history.replaceState && settings.updateURL == true) {
-    //         var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
-    //         history.pushState( {}, document.title, href );
-    //       }
-    //     }
-    //     pos = ((init_index - 1) * 100) * -1;
-    //     el.transformPage(settings, pos, init_index);
-    //   } else {
-    //     $(settings.sectionContainer + "[data-index='1']").addClass("active")
-    //     $("body").addClass("viewing-page-1")
-    //     if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
-    //   }
-    // }else{
+        next = $(settings.sectionContainer + "[data-index='" + (init_index) + "']");
+        if(next) {
+          next.addClass("active")
+          if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
+          $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
+          $("body").addClass("viewing-page-"+next.data("index"))
+          if (history.replaceState && settings.updateURL == true) {
+            var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
+            history.pushState( {}, document.title, href );
+          }
+        }
+        pos = ((init_index - 1) * 100) * -1;
+        el.transformPage(settings, pos, init_index);
+      } else {
+        $(settings.sectionContainer + "[data-index='1']").addClass("active")
+        $("body").addClass("viewing-page-1")
+        if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
+      }
+    }else{
       $(settings.sectionContainer + "[data-index='1']").addClass("active")
       $("body").addClass("viewing-page-1")
       if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
-    // }
+    }
 
     if(settings.pagination == true)  {
-      $(".onepage-pagination li a").click(function (e){
-        e.preventDefault();
+      $(".onepage-pagination li a").click(function (){
         var page_index = $(this).data("index");
         el.moveTo(page_index);
       });
