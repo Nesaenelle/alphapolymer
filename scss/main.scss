@@ -342,8 +342,8 @@ a {
         position: absolute;
         right: 0;
         bottom: 80px;
-        max-width: 843px;
-        padding: 50px 50px 0 50px;
+        width: 843px;
+        padding: 47px 44px 0 44px;
         flex-wrap: wrap;
 
         &__title {
@@ -351,6 +351,17 @@ a {
             font-size: 18px;
             font-weight: 400;
             color: #fff;
+            margin-bottom: 31px;
+        }
+
+        &__submitted {
+            width: 55%;
+            position: relative;
+            padding: 40px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            text-align: center;
         }
 
         form {
@@ -364,7 +375,7 @@ a {
                 color: #6f6d89;
                 font-size: 14px;
                 resize: none;
-                padding: 10px 10px;
+                padding: 10px 13px;
                 background: none;
                 border: none;
                 border-bottom: 2px solid #6f6d89;
@@ -395,6 +406,7 @@ a {
                 overflow: hidden;
                 margin-top: 100px;
                 max-height: 180px;
+                padding-bottom: 0px;
             }
         }
 
@@ -405,18 +417,50 @@ a {
         }
 
         &__info {
-            width: 40%;
-
+            width: 307px;
             font-size: 20px;
             color: #fff;
-
+            padding-bottom: 60px;
             &_item {
                 display: flex;
-                align-items: center;
-                margin-top: 30px;
+                align-items: start;
+                flex-wrap: wrap;
+                margin-top: 24px;
+
+                // margin-bottom: 40px;
+                &:first-child {
+                    line-height: 35px;
+                    margin-top: 22px;
+
+                    img {
+                        margin-top: -3px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    margin-top: 57px;
+                    flex-wrap: initial;
+
+                    img {
+                        margin-top: -7px;
+                    }
+
+                    >div {
+                        display: flex;
+                        flex-wrap: wrap;
+                    }
+                }
+
+                &:last-child {
+                    margin-top: 48px;
+
+                    img {
+                        margin-top: -7px;
+                    }
+                }
 
                 img {
-                    width: 50px;
+                    width: 45px;
                 }
             }
         }
@@ -432,11 +476,11 @@ a {
         &__bg {
             background-size: cover !important;
             height: 100%;
-            width: 50%;
+            width: 45%;
         }
 
         &__info {
-            width: 50%;
+            width: 55%;
             position: relative;
             padding: 40px;
 

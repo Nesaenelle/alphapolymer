@@ -144,23 +144,7 @@
                 </div>
             </section>
             <section class="contacts-section">
-                <div class="form">
-                    <div class="form__title">Вы можете связаться с нами любым доступным способом</div>
-                    <form>
-                        <input type="text" placeholder="Ваше Имя" maxlength="30">
-                        <input type="text" placeholder="Ваш Email" maxlength="30">
-                        <div class="form__textarea">
-                            <textarea placeholder="Напишите нам" auto-resize maxlength="300"></textarea>
-                        </div>
-                   
-                        <button type="submit" class="btn">ОТПРАВИТЬ</button>
-                    </form>
-                    <div class="form__info">
-                        <div class="form__info_item"><img src="img/svg/Map-Pin.svg" alt="">г. Киев <br>ул. Мельникова 81А </div>
-                        <div class="form__info_item"><img src="img/svg/Phone.svg" alt="">+380 67 654 60 85 <br>+380 44 465 64 02</div>
-                        <div class="form__info_item"><img src="img/svg/Mail.svg" alt="">office@alfapolymer.com.ua</div>
-                        </div>
-                    </div>
+                <app-contacts></app-contacts>
             </section>
             <section class="product-item-section">
                 <app-product></app-product>
@@ -206,6 +190,36 @@
                 <div class="product__info_small-name">{{product.eng_name}}</div>
                 <div class="product__info_descr" v-html="product.descr"></div>
                 <a href="#5" @click="goTo(5)"><button class="btn">СВЯЗАТЬСЯ С НАМИ</button></a>
+            </div>
+        </div>
+    </template>
+
+    <template id="contacts-template">
+        <div class="form">
+            <div class="form__title" v-if="!submitted">Вы можете связаться с нами любым доступным способом</div>
+            <form @submit="submit()" v-if="!submitted">
+                <input type="text" v-model="form.name" required placeholder="Ваше Имя" maxlength="30">
+                <input type="email" v-model="form.email" required placeholder="Ваш Email" maxlength="30">
+                <div class="form__textarea">
+                    <textarea v-model="form.description" placeholder="Напишите нам" required auto-resize maxlength="300"></textarea>
+                </div>
+                <button type="submit" class="btn">ОТПРАВИТЬ</button>
+            </form>
+            <div v-if="submitted" class="form__submitted">
+                <div>Ваше сообщение отрпавлено. <br>В ближайщее время с вами <br>свяжется наш менеджер.</div>
+            </div>
+            <div class="form__info">
+                <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" class="form__info_item" target="_blank">
+                    <img src="img/svg/Map-Pin.svg" alt="">г. Киев <br>ул. Мельникова 81А 
+                </a>
+                <div class="form__info_item">
+                    <img src="img/svg/Phone.svg" alt="">
+                    <div>  
+                        <a href="tel:+380676546085">+380 67 654 60 85 </a>
+                        <a href="tel:+380444656402">+380 44 465 64 02</a>
+                    </div>
+                </div>
+                <a href="mailto:office@alfapolymer.com.ua" class="form__info_item"><img src="img/svg/Mail.svg" alt="">office@alfapolymer.com.ua</a>
             </div>
         </div>
     </template>

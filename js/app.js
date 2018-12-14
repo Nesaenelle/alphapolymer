@@ -121,6 +121,25 @@ Vue.component('app-product', {
     }
 });
 
+Vue.component('app-contacts', {
+    data: function() {
+        return {
+            form: {},
+            submitted: false
+        }
+    },
+    template: '#contacts-template',
+    mounted() {
+
+    },
+    methods: {
+        submit: function() {
+            // this.form;
+            this.submitted = true;
+        }
+    }
+});
+
 
 var app = new Vue({
     el: '#app',
