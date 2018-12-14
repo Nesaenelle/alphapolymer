@@ -5,24 +5,38 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&amp;subset=latin-ext" rel="stylesheet"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
 </head>
 
 <body>
     <div class="wrapper" id="app">
         <header>
-            <a href="#1" @click="goTo('1')" class="logo"><img src="img/logo_alfapolymer.svg" alt=""></a>
+            <a href="#1" @click="goTo(1)" class="logo"><img src="img/logo_alfapolymer.svg" alt=""></a>
             <nav v-cloak>
                 <ul>
-                    <li><a href="#2" @click="goTo('2')">{{Resources.products}}</a></li>
-                    <li><a href="#3" @click="goTo('3')">{{Resources.about_company}}</a></li>
-                    <li><a href="#4" @click="goTo('4')">{{Resources.partners}}</a></li>
-                    <li><a href="#5" @click="goTo('5')">{{Resources.contacts}}</a></li>
+                    <li><a href="#2" @click="goTo(2)">{{Resources.products}}</a></li>
+                    <li><a href="#3" @click="goTo(3)">{{Resources.about_company}}</a></li>
+                    <li><a href="#4" @click="goTo(4)">{{Resources.partners}}</a></li>
+                    <li><a href="#5" @click="goTo(5)">{{Resources.contacts}}</a></li>
                 </ul>
             </nav>
         </header>
-        <aside>
+        <aside class="sidebar">
+            <div class="sidebar__phone">
+                <a href="tel:">
+                    <img src="img/svg/Phone-white.svg" alt="">
+                </a>
+            </div>
+            <div class="sidebar__socials">
+                <div>
+                    <ul>
+                        <li><a href="">facebook</a></li>
+                        <li><a href="">prom.ua</a></li>
+                    </ul>
+                    <a href=""><img src="img/svg/Share.svg" alt=""></a>
+                </div>
+            </div>
         </aside>
         <main class="main">
             <section class="home-section">
@@ -33,68 +47,77 @@
                     <div class="product-list__item">
                         <div class="product-list__item_number">01</div>
                         <div class="product-list__item_title">EPS</div>
-                        <div>Вспененный полистирол </div>
-                        <div>Expandable Polystyrene</div>
+                        <div class="product-list__item_name">Вспененный полистирол </div>
+                        <div class="product-list__item_name">Expandable Polystyrene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 1)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">02</div>
                         <div class="product-list__item_title">HIPS</div>
-                        <div> Ударопрочный полистирол</div>
-                        <div>High Impact PolyStyrene</div>
+                        <div class="product-list__item_name pink"> Ударопрочный полистирол</div>
+                        <div class="product-list__item_name">High Impact PolyStyrene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 2)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">03</div>
                         <div class="product-list__item_title">GPPS</div>
-                        <div> Полистирол общего назначения</div>
-                        <div>General Purpose Polystyrene</div>
+                        <div class="product-list__item_name pink"> Полистирол общего назначения</div>
+                        <div class="product-list__item_name">General Purpose Polystyrene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 3)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">04</div>
                         <div class="product-list__item_title">PP</div>
-                        <div> Полипропилен</div>
-                        <div>Polypropylene</div>
+                        <div class="product-list__item_name pink"> Полипропилен</div>
+                        <div class="product-list__item_name">Polypropylene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 4)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">05</div>
                         <div class="product-list__item_title">LLDPE</div>
-                        <div>Полиэтилен низкой плотности</div>
-                        <div>Linear low-density polyethylene </div>
+                        <div class="product-list__item_name pink">Полиэтилен низкой плотности</div>
+                        <div class="product-list__item_name">Linear low-density polyethylene </div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 5)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">06</div>
                         <div class="product-list__item_title">HDPE</div>
-                        <div>Полиэтилен высокого давления</div>
-                        <div>General Purpose Polystyrene</div>
+                        <div class="product-list__item_name pink">Полиэтилен высокого давления</div>
+                        <div class="product-list__item_name">General Purpose Polystyrene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 6)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">07</div>
                         <div class="product-list__item_title">LDPE</div>
-                        <div>Полиэтилен низкого давления</div>
-                        <div>Low density polyethylene</div>
+                        <div class="product-list__item_name pink">Полиэтилен низкого давления</div>
+                        <div class="product-list__item_name">Low density polyethylene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 7)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">08</div>
                         <div class="product-list__item_title">Chalk</div>
-                        <div>Меловая добавка</div>
-                        <div>Chank Compount</div>
+                        <div class="product-list__item_name pink">Меловая добавка</div>
+                        <div class="product-list__item_name">Chank Compount</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 8)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">09</div>
                         <div class="product-list__item_title">HIPS<sup>вторичный</sup></div>
-                        <div>Ударопрочный полистирол</div>
-                        <div>High Impact PolyStyrene</div>
+                        <div class="product-list__item_name pink">Ударопрочный полистирол</div>
+                        <div class="product-list__item_name">High Impact PolyStyrene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 2)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                     <div class="product-list__item">
                         <div class="product-list__item_number">10</div>
                         <div class="product-list__item_title">GPPS<sup>вторичный</sup></div>
-                        <div>Полистирол общего назначения</div>
-                        <div>General Purpose Polystyrene</div>
+                        <div class="product-list__item_name pink">Полистирол общего назначения</div>
+                        <div class="product-list__item_name">General Purpose Polystyrene</div>
+                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 3)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
                     </div>
                 </div>
             </section>
             <section class="about-section">
-                <div class="text-block">Появившаяся на украинском рынке в 2008 году, наша компания стала одной из наиболее успешных и крупных компаний – поставщиков нефтехимического сырья для государственных и частных предприятий различных производственных областей и масштабов. Мы быстро и в срок осуществим доставку полиэтилена, полистирола и полипропилена по всей территории Украины. Гибкая ценовая политика, возможность стабильного снабжения сырьём в любых объёмах и персональный подход к каждому заказчику, создают благоприятную почву для установления долгосрочного сотрудничества с потребителями полимерного сырья. Грамотная организация складской логистики даёт возможность производить сырьевые поставки во все регионы Украины в кратчайшие сроки.
-                    Наша компания способна максимально сгладить негативные последствия колебания рыночных цен для своих клиентов и сделать сотрудничество взаимовыгодным благодаря слаженной работе аналитического и финансового подразделений компании. Сотрудники компании являются опытными профессионалами, в лице которых вы найдете не только надежных и успешных партнеров по бизнесу, но и ответственных, отзывчивых людей - преданных своему делу.</div>
+                <div class="text-block">{{Resources.about_text}}</div>
             </section>
             <section class="partners-section">
                 <div class="partners-block">
@@ -122,23 +145,26 @@
             </section>
             <section class="contacts-section">
                 <div class="form">
-                    <div>Вы можете связаться с нами любым доступным способом</div>
+                    <div class="form__title">Вы можете связаться с нами любым доступным способом</div>
                     <form>
-                        <input type="text" placeholder="Ваше Имя">
-                        <input type="text" placeholder="Ваш Email">
-                        <input type="text" placeholder="Ваш Email">
-                        <button>ОТПРАВИТЬ</button>
+                        <input type="text" placeholder="Ваше Имя" maxlength="30">
+                        <input type="text" placeholder="Ваш Email" maxlength="30">
+                        <div class="form__textarea">
+                            <textarea placeholder="Напишите нам" auto-resize maxlength="300"></textarea>
+                        </div>
+                   
+                        <button type="submit" class="btn">ОТПРАВИТЬ</button>
                     </form>
-                    <div>
-                        <div><i></i>г. Киев <br>ул. Мельникова 81А </div>
-                        <div><i></i>+380 67 654 60 85 <br>+380 44 465 64 02</div>
-                        <div><i></i>office@alfapolymer.com.ua</div>
+                    <div class="form__info">
+                        <div class="form__info_item"><img src="img/svg/Map-Pin.svg" alt="">г. Киев <br>ул. Мельникова 81А </div>
+                        <div class="form__info_item"><img src="img/svg/Phone.svg" alt="">+380 67 654 60 85 <br>+380 44 465 64 02</div>
+                        <div class="form__info_item"><img src="img/svg/Mail.svg" alt="">office@alfapolymer.com.ua</div>
+                        </div>
                     </div>
-                </div>
             </section>
-            <!-- <section class="product-item-section">
-                
-            </section> -->
+            <section class="product-item-section">
+                <app-product></app-product>
+            </section>
         </main>
         <app-pagination></app-pagination>
         <app-language></app-language>
@@ -148,23 +174,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.3.3/rxjs.umd.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery.onepage-scroll.js"></script>
-
-
+    <template id="pagination-template">
+        <div class="pagination">
+            <div class="pagination__prev" @click="prev()"><img src="img/svg/Arrow-left.svg" alt=""></div>
+            <div class="pagination__next" @click="next()"><img src="img/svg/Arrow-right.svg" alt=""></div>
+        </div>
+    </template>
     <template id="language-template">
-        <div class="language">        
-            <div class="language-list" :class="{active : visible}">
+        <div class="language" :class="{active : visible}">
+            <div class="language-list">
                 <div class="language-list__item" v-for="lang in languages" @click="changeLang(lang)">{{lang}}</div>
             </div>
-            <div class="language-list__value" @click.stop="toggle()">{{activeLang}}</div>
+            <div class="language-list__value" @click.stop="toggle()">{{activeLang}} <i class="icon"></i></div>
+        </div>
+    </template>
+
+    <template id="product-template">
+        <div class="product">
+            <div class="product__bg" :style="{backgroundImage: 'url(img/'+ product.url + ')'}">
+                
+            </div>
+            <div class="product__info">
+                <div class="product__info_switcher">
+                    <div class="product__info_switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
+                    <div class="product__info_switcher-name">{{product.title}}</div>
+                    <div class="product__info_switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
+                </div>
+
+                <div class="product__info_title">{{product.title}}</div>
+                <div class="product__info_name" v-if="langState$.value !== 'en'">{{product.name}}</div>
+                <div class="product__info_small-name">{{product.eng_name}}</div>
+                <div class="product__info_descr" v-html="product.descr"></div>
+                <a href="#5" @click="goTo(5)"><button class="btn">СВЯЗАТЬСЯ С НАМИ</button></a>
+            </div>
         </div>
     </template>
     <script src="js/app.js"></script>
-    <!-- <script src="js/jquery.touchSwipe.min.js"></script> -->
-    <!-- <script src="js/slick.min.js"></script> -->
-    <!-- <script src="js/jquery.onepage-scroll.js"></script> -->
-    <!-- <script src="js/core.js"></script> -->
-    <!--    <script src="js/all.js"></script> -->
-
 </body>
 
 </html>

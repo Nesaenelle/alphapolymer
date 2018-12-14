@@ -1,7 +1,46 @@
-aside {
+.sidebar {
 	width: 80px;
 	height: 100%;
 	background: #515067;
 	display: block;
 	z-index: 100;
+	padding-top: 15px;
+	&__phone {
+		display: flex;
+		justify-content: center;
+		height: 50px;
+		a {
+			display: block;
+		}
+		img {
+			width: 50px;
+		}
+	}
+	&__socials {
+		color: #fff;
+		font-size: 16px;
+		height: calc(100% - 80px - 50px);
+		display: flex;
+		align-items: flex-end;
+		
+		> div {
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			justify-content: center;
+		}
+		img {
+			width: 50px;
+			height: 100px;
+		}
+		ul {
+			display: flex;
+			transform: rotate(- 90deg);
+			// transform-origin: left top 0;
+			margin-bottom: 58px;
+			li {
+				margin-left: 51px;
+			}
+		}
+	}
 }

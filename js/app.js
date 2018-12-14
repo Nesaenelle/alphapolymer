@@ -1,10 +1,12 @@
 var languages = ['ru', 'ua', 'en']
-var langState = new rxjs.BehaviorSubject();
+var langState$ = new rxjs.BehaviorSubject();
+var product$ = new rxjs.BehaviorSubject();
+var products$ = new rxjs.BehaviorSubject();
 
 function defaultLanguage() {
     // window.location.hash = 'ru';
     localStorage.setItem('lang', 'ru');
-    langState.next('ru');
+    langState$.next('ru');
 }
 
 checkLanguage();
@@ -15,7 +17,7 @@ function checkLanguage() {
         defaultLanguage();
     } else {
         if (languages.indexOf(lang) > -1) {
-            langState.next(lang);
+            langState$.next(lang);
         } else {
             defaultLanguage();
         }
@@ -29,7 +31,7 @@ Vue.component('app-pagination', {
 
         }
     },
-    template: '<div class="pagination"><div class="pagination__prev" @click="prev()"></div><div class="pagination__next" @click="next()"></div></div>',
+    template: '#pagination-template',
     methods: {
         prev: function() {
             $(".main").moveUp();
@@ -52,7 +54,7 @@ Vue.component('app-language', {
     template: '#language-template',
     mounted() {
         var self = this;
-        langState
+        langState$
             .subscribe(res => {
                 if (!res) return;
                 this.activeLang = res;
@@ -65,12 +67,56 @@ Vue.component('app-language', {
     },
     methods: {
         changeLang: function(lang) {
-            langState.next(lang);
+            langState$.next(lang);
             localStorage.setItem('lang', lang);
             this.visible = false;
         },
         toggle: function() {
             this.visible = !this.visible;
+        }
+    }
+});
+
+
+Vue.component('app-product', {
+    data: function() {
+        return {
+            product: {},
+            langState$: langState$  
+        }
+    },
+    template: '#product-template',
+    mounted() {
+        product$.subscribe(res => {
+            if (!res) return;
+            var product = products$.getValue().data.filter(r => r.id == res)[0];
+            if (product) {
+                this.product = product;
+            }
+        });
+    },
+    methods: {
+        goTo: function(id) {
+            jQuery(".main").moveTo(id);
+        },
+        prev: function() {
+            var index = product$.getValue();
+            index--;
+            if (index <= 0) {
+                index = 1;
+            }
+
+            product$.next(index);
+        },
+        next: function() {
+            var index = product$.getValue();
+            index++;
+
+            if (index >= products$.getValue().data.length) {
+                index = products$.getValue().data.length;
+            }
+
+            product$.next(index);
         }
     }
 });
@@ -82,7 +128,8 @@ var app = new Vue({
         Resources: {}
     },
     mounted() {
-        langState
+        var self = this;
+        langState$
             .subscribe(res => {
                 if (!res) return;
                 if (res === 'ru') {
@@ -125,19 +172,66 @@ var app = new Vue({
                         link.classList.remove('active');
                     }
                 });
+
+                if (index == 6) {
+
+                }
             },
             afterMove: function(index) {
 
             },
+            updateURL: true,
             loop: false,
             keyboard: false,
             pagination: false,
             direction: "horizontal"
         });
+
+
+        this.$http.get('/products.json').then(response => {
+            products$.next(response.body);
+            product$.next(response.body.data[0].id);
+        }, response => {
+
+        });
     },
     methods: {
-        goTo: function(id) {
+        goTo: function(id, productId) {
             jQuery(".main").moveTo(id);
+            if (productId) {
+                product$.next(productId);
+            }
         }
     }
 });
+
+
+$('.wrapper').animate({ opacity: 1 }, 1000);
+
+;
+(function() {
+    function domReady(f) { /in/.test(document.readyState) ? setTimeout(domReady, 16, f) : f() }
+
+    function resize(event) {
+        event.target.style.height = 'auto';
+        event.target.style.height = event.target.scrollHeight + 'px';
+    }
+    /* 0-timeout to get the already changed text */
+    function delayedResize(event) {
+        window.setTimeout(resize, 0, event);
+    }
+
+    domReady(function() {
+        var textareas = document.querySelectorAll('textarea[auto-resize]')
+
+        for (var i = 0, l = textareas.length; i < l; ++i) {
+            var el = textareas.item(i)
+
+            el.addEventListener('change', resize, false);
+            el.addEventListener('cut', delayedResize, false);
+            el.addEventListener('paste', delayedResize, false);
+            el.addEventListener('drop', delayedResize, false);
+            el.addEventListener('keydown', delayedResize, false);
+        }
+    })
+}());
