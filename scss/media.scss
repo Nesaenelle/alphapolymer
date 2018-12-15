@@ -412,6 +412,9 @@
 
 @media screen and (max-width: 480px) {
     .partners-section {
+        .partners-block {
+            bottom: 30px;
+        }
         .partners-block__countries {
             margin-top: 15px;
         }
