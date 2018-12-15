@@ -482,7 +482,7 @@ a {
         &__info {
             width: 55%;
             position: relative;
-            padding: 40px;
+            padding: 36px 27px;
 
             &_switcher {
                 display: flex;
@@ -491,7 +491,7 @@ a {
                 top: 0;
                 left: 0;
                 font-size: 20px;
-                padding: 5px;
+                padding: 4px;
                 color: #fff;
 
                 &-left {
@@ -513,7 +513,7 @@ a {
                 }
 
                 &-name {
-                    padding: 0 35px;
+                    padding: 0 40px;
                 }
 
                 img {
@@ -536,12 +536,13 @@ a {
             &_small-name {
                 font-size: 24px;
                 font-weight: 500;
-                margin-top: 10px;
+                margin-top: 15px;
             }
 
             &_descr {
                 margin-top: 60px;
                 font-size: 18px;
+                margin-left: 5x;
             }
         }
     }
