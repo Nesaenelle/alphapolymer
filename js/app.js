@@ -189,7 +189,7 @@ var app = new Vue({
         langState$
             .subscribe(function(res) {
                 if (!res) return;
-                self.$http.get('/translate/' + res + '.json').then(function(response) {
+                self.$http.get('./translate/' + res + '.json').then(function(response) {
                     self.Resources = response.body;
                     resources$.next(response.body);
                 });
@@ -226,7 +226,7 @@ var app = new Vue({
         });
 
 
-        this.$http.get('/products.json').then(function(response) {
+        this.$http.get('./products.json').then(function(response) {
             products$.next(response.body);
             product$.next(response.body.data[0].id);
         });
