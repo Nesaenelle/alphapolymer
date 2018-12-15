@@ -38,6 +38,35 @@
             }
         }
     }
+
+    .about-section {
+        .text-block {
+            width: 100%;
+            font-size: 16px;
+            bottom: 0;
+            max-width: 100%;
+            padding-bottom: 100px;
+            font-weight: 400;
+        }
+    }
+
+    .contacts-section {
+        .form {
+            width: 100%;
+            bottom: 0;
+        }
+    }
+
+    .products-section .product-list {
+        max-width: calc(254px * 4);
+        overflow: auto;
+        height: 90%;
+
+        .product-list__item {
+            width: calc(100%/4);
+            margin-right: 0;
+        }
+    }
 }
 
 @media screen and (max-width: 980px) {
@@ -47,14 +76,17 @@
         nav {
             display: none;
         }
+
         .mobile-menu {
             display: block;
         }
+
         .burger {
             display: flex;
 
             background: #515067;
         }
+
         .dropdown-menu {
             nav {
 
@@ -64,6 +96,15 @@
             }
         }
 
+    }
+
+    .products-section .product-list {
+        max-width: calc(254px * 2);
+        padding: 0;
+
+        .product-list__item {
+            width: calc(100%/2);
+        }
     }
 }
 
@@ -89,6 +130,20 @@
         }
     }
 
+    .about-section {
+        .text-block {
+            padding-right: 40px;
+        }
+    }
+
+    .products-section .product-list {
+        max-width: calc(254px);
+        padding: 0;
+
+        .product-list__item {
+            width: calc(100%);
+        }
+    }
 }
 
 //mobile
@@ -109,20 +164,24 @@
         .burger {
             width: 40px;
             height: 40px;
-            > div {
-                height: 19px; 
+
+            >div {
+                height: 19px;
             }
+
             &__line {
                 margin-top: 3px;
                 width: 12px;
             }
         }
-   
+
         .dropdown-menu {
             width: 100%;
             padding: 10px 20px;
+
             .logo {
                 display: block;
+
                 img {
                     margin-top: 0;
                 }
@@ -173,6 +232,14 @@
             &__countries_item {
                 padding: 0;
             }
+        }
+    }
+
+    .about-section {
+        .text-block {
+            max-height: 90%;
+            overflow: auto;
+            font-size: 14px;
         }
     }
 }

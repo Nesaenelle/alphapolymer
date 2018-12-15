@@ -188,12 +188,14 @@ a {
 }
 
 .products-section {
+    touch-action: none;
     .product-list {
         display: flex;
         flex-wrap: wrap;
         max-width: calc(254px * 6);
         margin: 59px auto;
-
+        padding: 0 80px;
+        justify-content: center;
         &__item {
             $c: &;
             width: calc(100%/6);

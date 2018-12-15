@@ -41,7 +41,7 @@
             startY,
             $this = $(this);
 
-        $this.bind('touchstart', touchstart);
+        // $this.bind('touchstart', touchstart);
 
         function touchstart(event) {
           var touches = event.originalEvent.touches;
