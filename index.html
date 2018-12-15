@@ -21,13 +21,7 @@
                     <li><a href="#5" @click="goTo(5)">{{Resources.contacts}}</a></li>
                 </ul>
             </nav>
-            <div class="burger">
-                <div>                
-                    <div class="burger__line"></div>
-                    <div class="burger__line"></div>
-                    <div class="burger__line"></div>
-                </div>
-            </div>
+            <app-menu></app-menu>
         </header>
         <aside class="sidebar">
             <div class="sidebar__phone">
@@ -227,6 +221,30 @@
                     </div>
                 </div>
                 <a href="mailto:office@alfapolymer.com.ua" class="form__info_item"><img src="img/svg/Mail.svg" alt="">office@alfapolymer.com.ua</a>
+            </div>
+        </div>
+    </template>
+    <template id="menu-template">
+        <div>        
+            <div class="burger" @click="toggle()">
+                <div>                
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
+                </div>
+            </div>
+            <div class="dropdown-menu" :class="{open : menuIsActivated}">
+                <a href="#1" @click="goTo(1)" class="logo"><img src="img/logo_alfapolymer.svg" alt=""></a>
+                <div class="dropdown-menu__close" @click="close()"></div>
+                <nav v-cloak>
+                    <ul>
+                        <li><a href="#1" @click="goTo(1)">{{Resources.home}}</a></li>
+                        <li><a href="#2" @click="goTo(2)">{{Resources.products}}</a></li>
+                        <li><a href="#3" @click="goTo(3)">{{Resources.about_company}}</a></li>
+                        <li><a href="#4" @click="goTo(4)">{{Resources.partners}}</a></li>
+                        <li><a href="#5" @click="goTo(5)">{{Resources.contacts}}</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </template>

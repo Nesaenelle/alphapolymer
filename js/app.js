@@ -2,6 +2,7 @@ var languages = ['ru', 'ua', 'en']
 var langState$ = new rxjs.BehaviorSubject();
 var product$ = new rxjs.BehaviorSubject();
 var products$ = new rxjs.BehaviorSubject();
+var resources$ = new rxjs.BehaviorSubject();
 
 function defaultLanguage() {
     // window.location.hash = 'ru';
@@ -82,7 +83,7 @@ Vue.component('app-product', {
     data: function() {
         return {
             product: {},
-            langState$: langState$  
+            langState$: langState$
         }
     },
     template: '#product-template',
@@ -140,6 +141,42 @@ Vue.component('app-contacts', {
     }
 });
 
+Vue.component('app-menu', {
+    data: function() {
+        return {
+            Resources: {},
+            menuIsActivated: false
+        }
+    },
+    template: '#menu-template',
+    mounted() {
+        var self = this;
+        resources$.subscribe(res => {
+            if (res) {
+                this.Resources = res;
+            }
+        });
+
+        window.addEventListener('click', function(e) {
+            if (!self.$el.contains(e.target)) {
+                self.menuIsActivated = false;
+            }
+        }, false)
+    },
+    methods: {
+        goTo: function(id) {
+            jQuery(".main").moveTo(id);
+            this.menuIsActivated = false;
+        },
+        toggle: function() {
+            this.menuIsActivated = !this.menuIsActivated;
+        },
+        close: function() {
+            this.menuIsActivated = false;
+        }
+    }
+});
+
 
 var app = new Vue({
     el: '#app',
@@ -151,29 +188,12 @@ var app = new Vue({
         langState$
             .subscribe(res => {
                 if (!res) return;
-                if (res === 'ru') {
-                    this.$http.get('/translate/ru.json').then(response => {
-                        this.Resources = response.body;
-                    }, response => {
+                this.$http.get('/translate/' + res + '.json').then(response => {
+                    this.Resources = response.body;
+                    resources$.next(response.body);
+                }, response => {
 
-                    });
-                }
-
-                if (res === 'en') {
-                    this.$http.get('/translate/en.json').then(response => {
-                        this.Resources = response.body;
-                    }, response => {
-
-                    });
-                }
-
-                if (res === 'ua') {
-                    this.$http.get('/translate/ua.json').then(response => {
-                        this.Resources = response.body;
-                    }, response => {
-
-                    });
-                }
+                });
             });
 
         var links = document.querySelectorAll('[href^="#"]');

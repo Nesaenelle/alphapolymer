@@ -53,6 +53,15 @@
 
             background: #515067;
         }
+        .dropdown-menu {
+            nav {
+
+                ul {
+                    display: block;
+                }
+            }
+        }
+
     }
 }
 
@@ -97,6 +106,21 @@
         .burger {
             width: 40px;
             height: 40px;
+            > div {
+                height: 19px; 
+            }
+            &__line {
+                margin-top: 3px;
+                width: 12px;
+            }
+        }
+
+        .dropdown-menu {
+            width: 100%;
+            padding: 15px 20px;
+            .logo {
+                display: block;
+            }
         }
     }
 
