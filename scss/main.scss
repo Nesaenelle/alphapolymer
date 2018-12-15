@@ -530,26 +530,23 @@ a {
             }
         }
         &__info {
-            width: 55%;
+            width: calc(55% - 10px);
             position: relative;
             padding: 36px 27px;
-
+            height: calc(100vh - 220px);
+            margin-top: 40px;
+            padding-top: 0;
             overflow: auto;
-            height: 100%;
+            // height: 100%;
             margin-right: 10px;
             &::-webkit-scrollbar              {  background: #9e9db2; width: 4px;padding-right: 5px;}
-            // &::-webkit-scrollbar-button       {  background: #9e9db2;}
-            // &::-webkit-scrollbar-track        { background: red; }
-            &::-webkit-scrollbar-track-piece  { background: #9e9db2; }
-            &::-webkit-scrollbar-thumb        { background: red; }
-            &::-webkit-scrollbar-corner       {  background: red;}
-            &::-webkit-resizer                {background: red; }
-            // &::-webkit-scrollbar-track {
-            //     background: #eb3f57;
-            // }
             &::-webkit-scrollbar-thumb {
               background-color: #eb3f57;
               outline: 1px solid #eb3f57;
+            }   
+
+            .btn {
+                float: right;
             }
 
             &_title {
