@@ -2,7 +2,7 @@
 	"data": [
 		{
 			"id": 1,
-			"url": "EPS.jpg",
+			"url": "EPS-min.jpg",
 			"title": "EPS",
 			"name": "Вспененный полистирол",
 			"eng_name": "Expandable Polystyrene",
@@ -10,7 +10,7 @@
 		},
 		{
 			"id": 2,
-			"url": "HIPS.jpg",
+			"url": "HIPS-min.jpg",
 			"title": "HIPS",
 			"name": "Ударопрочный полистирол",
 			"eng_name": "High Impact PolyStyrene",
@@ -18,7 +18,7 @@
 		},
 		{
 			"id": 3,
-			"url": "GPPS.jpg",
+			"url": "GPPS-min.jpg",
 			"title": "GPPS",
 			"name": "Полистирол общего назначения",
 			"eng_name": "General Purpose Polystyrene",
@@ -26,7 +26,7 @@
 		}, 
 		{
 			"id": 4,
-			"url": "PP.jpg",
+			"url": "PP-min.jpg",
 			"title": "PP",
 			"name": "Термопластичный полимер пропилена",
 			"eng_name": "Polypropylene",
@@ -34,7 +34,7 @@
 		},
 		{
 			"id": 5,
-			"url": "LLDPE.jpg",
+			"url": "LLDPE-min.jpg",
 			"title": "LLDPE",
 			"name": "Полиэтилен",
 			"eng_name": "Linear low-density polyethylene",
@@ -42,7 +42,7 @@
 		},
 		{
 			"id": 6,
-			"url": "HDPE.jpg",
+			"url": "HDPE-min.jpg",
 			"title": "HDPE",
 			"name": "Полиэтилен высокого давления",
 			"eng_name": "High-density polyethylene или PEHD",
@@ -50,7 +50,7 @@
 		},
 		{
 			"id": 7,
-			"url": "LDPE.jpg",
+			"url": "LDPE-min.jpg",
 			"title": "LDPE",
 			"name": "Полиэтилен низкого давления",
 			"eng_name": "Low density polyethylene",
@@ -58,7 +58,7 @@
 		},
 		{
 			"id": 8,
-			"url": "LDPE.jpg",
+			"url": "LDPE-min.jpg",
 			"title": "Chalk",
 			"name": "Меловой компаунд",
 			"eng_name": "Chank Compount",

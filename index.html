@@ -176,9 +176,7 @@
 
     <template id="product-template">
         <div class="product">
-            <div class="product__bg" :style="{backgroundImage: 'url(img/'+ product.url + ')'}">
-                
-            </div>
+            <div class="product__bg" v-if="product.url" :style="{backgroundImage: 'url(img/'+ product.url + ')'}"></div>
             <div class="product__info">
                 <div class="product__info_switcher">
                     <div class="product__info_switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>

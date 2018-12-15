@@ -88,11 +88,12 @@ Vue.component('app-product', {
     },
     template: '#product-template',
     mounted: function() {
+        var self = this;
         product$.subscribe(function(res) {
             if (!res) return;
             var product = products$.getValue().data.filter(function(r){ return r.id == res})[0];
             if (product) {
-                this.product = product;
+                self.product = product;
             }
         });
     },
@@ -188,8 +189,8 @@ var app = new Vue({
         langState$
             .subscribe(function(res) {
                 if (!res) return;
-                this.$http.get('/translate/' + res + '.json').then(function(response) {
-                    this.Resources = response.body;
+                self.$http.get('/translate/' + res + '.json').then(function(response) {
+                    self.Resources = response.body;
                     resources$.next(response.body);
                 });
             });
