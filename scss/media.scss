@@ -47,7 +47,9 @@
         nav {
             display: none;
         }
-
+        .mobile-menu {
+            display: block;
+        }
         .burger {
             display: flex;
 
@@ -92,7 +94,8 @@
 //mobile
 @media screen and (max-width: 600px) {
     header .logo img {
-        max-width: 80px;
+        max-width: 70px;
+        margin-top: 7px;
     }
 
     main {
@@ -114,12 +117,15 @@
                 width: 12px;
             }
         }
-
+   
         .dropdown-menu {
             width: 100%;
-            padding: 15px 20px;
+            padding: 10px 20px;
             .logo {
                 display: block;
+                img {
+                    margin-top: 0;
+                }
             }
         }
     }
