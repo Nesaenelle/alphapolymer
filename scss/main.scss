@@ -140,7 +140,7 @@ a {
     height: 100%;
     padding-top: 81px;
     overflow: hidden;
-    min-height: 700px;
+    // min-height: 700px;
 }
 
 .btn {
@@ -204,7 +204,7 @@ a {
             transition: 0.2s;
             margin-bottom: 30px;
             margin-right: 30px;
-
+            position: relative;
             &:hover {
                 box-shadow: 0 10px 60px 0 rgba(235, 63, 87, 0.38);
                 background: #eb3f57;
@@ -248,6 +248,7 @@ a {
                 // font-weight: 600;
                 margin-top: 3px;
 
+
                 &.pink {
                     color: #eb3f57;
                 }
@@ -257,7 +258,9 @@ a {
                 display: flex;
                 justify-content: flex-end;
                 margin-top: 10px;
-
+                position: absolute;
+                    right: 20px;
+                    bottom: 15px;
                 img {
                     width: 24px;
                 }
@@ -474,54 +477,67 @@ a {
         display: flex;
         // justify-content: space-between;
         height: 100%;
-
+        position: relative;
         &__bg {
             background-size: cover !important;
             height: 100%;
             width: 45%;
+            img {
+                // width: 100%;
+                /* width: 100vw; */
+                height: 100vh;
+                object-fit: cover;
+                width: 100%;
+            }
         }
+        &__switcher {
+            display: flex;
+            position: absolute;
+            background: #eb3f57;
+            top: 0;
+            left: 0;
+            font-size: 20px;
+            padding: 4px;
+            left: 45%;
+            position: absolute;
+            color: #fff;
+            z-index: 999;
 
+            &-left {
+                width: 20px;
+                text-align: center;
+                cursor: pointer;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            &-right {
+                width: 20px;
+                text-align: center;
+                cursor: pointer;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            &-name {
+                padding: 0 40px;
+            }
+
+            img {
+                width: 25px;
+            }
+        }
         &__info {
             width: 55%;
             position: relative;
             padding: 36px 27px;
 
-            &_switcher {
-                display: flex;
-                position: absolute;
-                background: #eb3f57;
-                top: 0;
-                left: 0;
-                font-size: 20px;
-                padding: 4px;
-                color: #fff;
+            overflow: auto;
+            height: 100%;
 
-                &-left {
-                    width: 20px;
-                    text-align: center;
-                    cursor: pointer;
-                    align-items: center;
-                    display: flex;
-                    justify-content: center;
-                }
 
-                &-right {
-                    width: 20px;
-                    text-align: center;
-                    cursor: pointer;
-                    align-items: center;
-                    display: flex;
-                    justify-content: center;
-                }
-
-                &-name {
-                    padding: 0 40px;
-                }
-
-                img {
-                    width: 25px;
-                }
-            }
 
             &_title {
                 font-size: 72px;

@@ -154,7 +154,7 @@ Vue.component('app-menu', {
         var self = this;
         resources$.subscribe(function(res) {
             if (res) {
-                this.Resources = res;
+                self.Resources = res;
             }
         });
 

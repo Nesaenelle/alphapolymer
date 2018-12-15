@@ -176,13 +176,17 @@
 
     <template id="product-template">
         <div class="product">
-            <div class="product__bg" v-if="product.url" :style="{backgroundImage: 'url(img/'+ product.url + ')'}"></div>
+            <!-- <div class="product__bg" v-if="product.url" :style="{backgroundImage: 'url(img/'+ product.url + ')'}"></div> -->
+            <div class="product__bg" v-if="product.url" >
+                <img v-bind:src="'img/' + product.url" alt="">
+            </div>
+            
+            <div class="product__switcher">
+                <div class="product__switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
+                <div class="product__switcher-name">{{product.title}}</div>
+                <div class="product__switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
+            </div>
             <div class="product__info">
-                <div class="product__info_switcher">
-                    <div class="product__info_switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
-                    <div class="product__info_switcher-name">{{product.title}}</div>
-                    <div class="product__info_switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
-                </div>
 
                 <div class="product__info_title">{{product.title}}</div>
                 <div class="product__info_name" v-if="langState$.value !== 'en'">{{product.name}}</div>
