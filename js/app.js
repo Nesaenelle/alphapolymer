@@ -53,10 +53,10 @@ Vue.component('app-language', {
         }
     },
     template: '#language-template',
-    mounted() {
+    mounted: function() {
         var self = this;
         langState$
-            .subscribe(res => {
+            .subscribe(function(res) {
                 if (!res) return;
                 this.activeLang = res;
             });
@@ -87,10 +87,10 @@ Vue.component('app-product', {
         }
     },
     template: '#product-template',
-    mounted() {
-        product$.subscribe(res => {
+    mounted: function() {
+        product$.subscribe(function(res) {
             if (!res) return;
-            var product = products$.getValue().data.filter(r => r.id == res)[0];
+            var product = products$.getValue().data.filter(function(r){ return r.id == res})[0];
             if (product) {
                 this.product = product;
             }
@@ -130,7 +130,7 @@ Vue.component('app-contacts', {
         }
     },
     template: '#contacts-template',
-    mounted() {
+    mounted: function() {
 
     },
     methods: {
@@ -149,9 +149,9 @@ Vue.component('app-menu', {
         }
     },
     template: '#menu-template',
-    mounted() {
+    mounted: function() {
         var self = this;
-        resources$.subscribe(res => {
+        resources$.subscribe(function(res) {
             if (res) {
                 this.Resources = res;
             }
@@ -183,16 +183,14 @@ var app = new Vue({
     data: {
         Resources: {}
     },
-    mounted() {
+    mounted: function() {
         var self = this;
         langState$
-            .subscribe(res => {
+            .subscribe(function(res) {
                 if (!res) return;
-                this.$http.get('/translate/' + res + '.json').then(response => {
+                this.$http.get('/translate/' + res + '.json').then(function(response) {
                     this.Resources = response.body;
                     resources$.next(response.body);
-                }, response => {
-
                 });
             });
 
@@ -227,11 +225,9 @@ var app = new Vue({
         });
 
 
-        this.$http.get('/products.json').then(response => {
+        this.$http.get('/products.json').then(function(response) {
             products$.next(response.body);
             product$.next(response.body.data[0].id);
-        }, response => {
-
         });
     },
     methods: {
