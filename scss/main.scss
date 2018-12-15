@@ -286,6 +286,12 @@ a {
         position: absolute;
         bottom: 80px;
         right: 0;
+
+        &::-webkit-scrollbar{  background: #9e9db2; width: 4px;padding-right: 5px;}
+        &::-webkit-scrollbar-thumb {
+          background-color: #eb3f57;
+          outline: 1px solid #eb3f57;
+        }   
     }
 }
 
@@ -539,7 +545,7 @@ a {
             overflow: auto;
             // height: 100%;
             margin-right: 10px;
-            &::-webkit-scrollbar              {  background: #9e9db2; width: 4px;padding-right: 5px;}
+            &::-webkit-scrollbar{  background: #9e9db2; width: 4px;padding-right: 5px;}
             &::-webkit-scrollbar-thumb {
               background-color: #eb3f57;
               outline: 1px solid #eb3f57;
