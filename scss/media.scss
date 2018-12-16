@@ -491,8 +491,27 @@
         .form {
             padding: 20px 40px 40px 20px;
             @media screen and (max-height: 500px) {
-                height: 100%;
-                padding-top: 40px;
+                // height: 100%;
+                // padding-top: 40px;
+                .form__title {
+                    font-size: 14px;
+                }
+                .form__info_item {
+                    font-size: 12px;
+                    img {
+                        width: 30px;
+                    }
+                }
+                .form__textarea {
+                    height: 60px;
+                }
+                form {
+                    input,
+                    textarea {
+                        max-height: 60px;
+                        font-size: 12px!important;
+                    }
+                }
             }
             &__submitted {
                 width: 100%;
@@ -501,12 +520,12 @@
                 width: 100%;
                 padding-left: 40px;
                 padding-bottom: 0;
-                max-height: 100%;
                 input,
                 textarea {
                     padding: 4px 8px;
                     font-size: 14px;
                     margin-top: 10px;
+                    max-height: 100px;
                 }
             }
 
@@ -560,19 +579,7 @@
         }
 
         .form__wrapper {
-            overflow: auto;
             flex-direction: column-reverse;
-            // padding-right: 26px;
-            // &::-webkit-scrollbar {
-            //     background: #9e9db2;
-            //     width: 4px;
-            //     padding-right: 5px;
-            // }
-
-            // &::-webkit-scrollbar-thumb {
-            //     background-color: #eb3f57;
-            //     outline: 1px solid #eb3f57;
-            // }
         }
     }
 }
