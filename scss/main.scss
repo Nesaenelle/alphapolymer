@@ -196,6 +196,7 @@ a {
         margin: 59px auto;
         padding: 0 80px;
         justify-content: center;
+
         &__item {
             $c: &;
             width: calc(100%/6);
@@ -205,6 +206,7 @@ a {
             margin-bottom: 30px;
             margin-right: 30px;
             position: relative;
+
             &:hover {
                 box-shadow: 0 10px 60px 0 rgba(235, 63, 87, 0.38);
                 background: #eb3f57;
@@ -259,8 +261,9 @@ a {
                 justify-content: flex-end;
                 margin-top: 10px;
                 position: absolute;
-                    right: 20px;
-                    bottom: 15px;
+                right: 20px;
+                bottom: 15px;
+
                 img {
                     width: 24px;
                 }
@@ -288,11 +291,16 @@ a {
         right: 0;
 
         span {
-            &::-webkit-scrollbar{  background: #9e9db2; width: 4px;padding-right: 5px;}
+            &::-webkit-scrollbar {
+                background: #9e9db2;
+                width: 4px;
+                padding-right: 5px;
+            }
+
             &::-webkit-scrollbar-thumb {
-              background-color: #eb3f57;
-              outline: 1px solid #eb3f57;
-            }   
+                background-color: #eb3f57;
+                outline: 1px solid #eb3f57;
+            }
         }
     }
 }
@@ -359,6 +367,12 @@ a {
         padding: 47px 44px 0 44px;
         flex-wrap: wrap;
 
+        &__wrapper {
+            width: 100%;
+            justify-content: space-between;
+            display: flex;
+        }
+
         &__title {
             width: 100%;
             font-size: 18px;
@@ -375,6 +389,13 @@ a {
             display: flex;
             align-items: center;
             text-align: center;
+        }
+
+        .mobile {
+            display: none;
+        }
+        .desktop {
+            display: block;
         }
 
         form {
@@ -434,6 +455,7 @@ a {
             font-size: 20px;
             color: #fff;
             padding-bottom: 60px;
+
             &_item {
                 display: flex;
                 align-items: start;
@@ -486,10 +508,12 @@ a {
         // justify-content: space-between;
         height: 100%;
         position: relative;
+
         &__bg {
             background-size: cover !important;
             height: 100%;
             width: 45%;
+
             img {
                 // width: 100%;
                 /* width: 100vw; */
@@ -498,6 +522,7 @@ a {
                 width: 100%;
             }
         }
+
         &__switcher {
             display: flex;
             position: absolute;
@@ -537,6 +562,7 @@ a {
                 width: 25px;
             }
         }
+
         &__info {
             width: calc(55% - 10px);
             position: relative;
@@ -547,11 +573,17 @@ a {
             overflow: auto;
             // height: 100%;
             margin-right: 10px;
-            &::-webkit-scrollbar{  background: #9e9db2; width: 4px;padding-right: 5px;}
+
+            &::-webkit-scrollbar {
+                background: #9e9db2;
+                width: 4px;
+                padding-right: 5px;
+            }
+
             &::-webkit-scrollbar-thumb {
-              background-color: #eb3f57;
-              outline: 1px solid #eb3f57;
-            }   
+                background-color: #eb3f57;
+                outline: 1px solid #eb3f57;
+            }
 
             .btn {
                 float: right;

@@ -1,12 +1,12 @@
 /* MOBILES */
 
-.desktop {
-    display: block;
-}
+// .desktop {
+//     display: block;
+// }
 
-.mobile {
-    display: none;
-}
+// .mobile {
+//     display: none;
+// }
 
 
 @media screen and (max-height: 900px) {}
@@ -51,9 +51,53 @@
     }
 
     .contacts-section {
+        background-size: contain;
+
         .form {
             width: 100%;
             bottom: 0;
+            padding: 25px 80px 0 20px;
+
+            form {
+                width: 300px;
+                padding-bottom: 80px;
+            }
+
+            &__title {
+                margin-bottom: 0;
+            }
+
+            &__info {
+                padding-top: 50px;
+                font-size: 16px;
+
+                &_item {
+                    &:first-child {
+                        line-height: 20px;
+                    }
+
+                    &:nth-child(2) {
+                        margin-top: 30px;
+                    }
+
+                    &:last-child {
+                        margin-top: 30px;
+                        line-height: 24px;
+                    }
+                }
+            }
+
+            .mobile {
+                display: block;
+            }
+
+            .desktop {
+                display: none;
+            }
+        }
+
+        .form__wrapper {
+            flex-direction: row-reverse;
         }
     }
 
@@ -61,11 +105,18 @@
         max-width: calc(254px * 4);
         overflow: auto;
         height: calc(100% - 160px);
-        &::-webkit-scrollbar{  background: #9e9db2; width: 4px;padding-right: 5px;}
+
+        &::-webkit-scrollbar {
+            background: #9e9db2;
+            width: 4px;
+            padding-right: 5px;
+        }
+
         &::-webkit-scrollbar-thumb {
-          background-color: #eb3f57;
-          outline: 1px solid #eb3f57;
-        }   
+            background-color: #eb3f57;
+            outline: 1px solid #eb3f57;
+        }
+
         margin-right: 10px;
 
         .product-list__item {
@@ -73,7 +124,6 @@
             margin-right: 0;
         }
     }
-
 }
 
 @media screen and (max-width: 980px) {
@@ -196,10 +246,11 @@
 
     .about-section {
         background-position: center;
+
         .text-block {
             padding-right: 0px;
             height: 70%;
-     
+
             span {
                 overflow: auto;
                 height: 100%;
@@ -212,6 +263,7 @@
 
     .products-section .product-list {
         max-width: calc(340px * 2);
+
         .product-list__item {
             width: calc(100%/2);
         }
@@ -354,6 +406,7 @@
         padding: 0;
         margin-top: 0;
         height: calc(100% - 60px);
+
         .product-list__item {
             width: 100%;
             height: auto;
@@ -406,6 +459,7 @@
                 padding-top: 0;
                 height: calc(100vh - 20vh - 120px);
                 margin-bottom: 0;
+
                 &_name {
                     font-size: 18px;
                 }
@@ -430,6 +484,74 @@
             }
         }
     }
+
+    .contacts-section {
+        .form {
+            padding: 20px 40px 40px 20px;
+            &__submitted {
+                width: 100%;
+            }
+            form {
+                width: 100%;
+                padding-left: 45px;
+                padding-bottom: 0;
+                input,
+                textarea {
+                    padding: 4px 8px;
+                    font-size: 14px;
+                    margin-top: 10px;
+                }
+            }
+
+            &__title {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+
+            &__info {
+                width: 100%;
+                padding-top: 0;
+                padding-bottom: 20px;
+                font-size: 14px;
+
+                &_item {
+                    &:first-child {
+                        margin-top: 0;
+                        line-height: 20px;
+                    }
+
+                    &:nth-child(2) {
+                        margin-top: 10px;
+                        line-height: 30px;
+                    }
+
+                    &:last-child {
+                        margin-top: 10px;
+                        line-height: 28px;
+                    }
+                }
+            }
+
+            .btn {
+                float: right;
+                width: 163px;
+                height: 41px;
+                font-size: 14px;
+                font-weight: 400;
+                margin-top: 15px;
+            }
+        }
+
+        .form__textarea {
+            height: 100px;
+        }
+
+        .form__wrapper {
+            // flex-wrap: wrap;
+            flex-direction: column-reverse;
+            // flex-direction: row-reverse;
+        }
+    }
 }
 
 
@@ -438,6 +560,7 @@
         .partners-block {
             bottom: 30px;
         }
+
         .partners-block__countries {
             margin-top: 15px;
         }

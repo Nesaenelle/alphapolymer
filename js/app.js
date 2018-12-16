@@ -244,6 +244,14 @@ var app = new Vue({
 
 $('.wrapper').animate({ opacity: 1 }, 1000);
 
+// $(window).on('hashchange', function() {
+//   if (location.hash) {
+//       jQuery(".main").moveTo(3);
+//   } else {
+//       jQuery(".main").moveTo(1);
+//   }
+// });
+
 ;
 (function() {
     function domReady(f) { /in/.test(document.readyState) ? setTimeout(domReady, 16, f) : f() }

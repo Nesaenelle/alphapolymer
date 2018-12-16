@@ -162,8 +162,8 @@
     <template id="pagination-template">
         <div class="pagination">
             <div class="pagination__prev" @click="prev()"><img src="img/svg/Arrow-left.svg" alt=""></div>
-            <div class="pagination__next" @click="next()"><img src="img/svg/Arrow-right.svg" alt=""></div>
-        </div>
+                <div class="pagination__next" @click="next()"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                </div>
     </template>
     <template id="language-template">
         <div class="language" :class="{active : visible}">
@@ -173,63 +173,62 @@
             <div class="language-list__value" @click.stop="toggle()">{{activeLang}} <i class="icon"></i></div>
         </div>
     </template>
-
     <template id="product-template">
         <div class="product">
             <!-- <div class="product__bg" v-if="product.url" :style="{backgroundImage: 'url(img/'+ product.url + ')'}"></div> -->
-            <div class="product__bg" v-if="product.url" >
+            <div class="product__bg" v-if="product.url">
                 <img v-bind:src="'img/' + product.url" alt="">
             </div>
-            
-            <div class="product__switcher">
-                <div class="product__switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
-                <div class="product__switcher-name">{{product.title}}</div>
-                <div class="product__switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
-            </div>
-            <div class="product__info">
-
-                <div class="product__info_title">{{product.title}}</div>
-                <div class="product__info_name" v-if="langState$.value !== 'en'">{{product.name}}</div>
-                <div class="product__info_small-name">{{product.eng_name}}</div>
-                <div class="product__info_descr" v-html="product.descr"></div>
-                <a href="#5" @click="goTo(5)"><button class="btn">СВЯЗАТЬСЯ С НАМИ</button></a>
-            </div>
-        </div>
+                <div class="product__switcher">
+                    <div class="product__switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
+                        <div class="product__switcher-name">{{product.title}}</div>
+                        <div class="product__switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
+                        </div>
+                        <div class="product__info">
+                            <div class="product__info_title">{{product.title}}</div>
+                            <div class="product__info_name" v-if="langState$.value !== 'en'">{{product.name}}</div>
+                            <div class="product__info_small-name">{{product.eng_name}}</div>
+                            <div class="product__info_descr" v-html="product.descr"></div>
+                            <a href="#5" @click="goTo(5)"><button class="btn">СВЯЗАТЬСЯ С НАМИ</button></a>
+                        </div>
+                    </div>
     </template>
-
     <template id="contacts-template">
         <div class="form">
-            <div class="form__title" v-if="!submitted">Вы можете связаться с нами любым доступным способом</div>
-            <form @submit="submit()" v-if="!submitted">
-                <input type="text" v-model="form.name" required placeholder="Ваше Имя" maxlength="30">
-                <input type="email" v-model="form.email" required placeholder="Ваш Email" maxlength="30">
-                <div class="form__textarea">
-                    <textarea v-model="form.description" placeholder="Напишите нам" required auto-resize maxlength="300"></textarea>
+            <div class="form__title desktop" v-if="!submitted">Вы можете связаться с нами любым доступным способом</div>
+            <div class="form__wrapper">
+                <form @submit.prevent="submit()" v-if="!submitted">
+                    <div class="form__title mobile" v-if="!submitted">Вы можете связаться с нами любым доступным способом</div>
+                    <input type="text" v-model="form.name" required placeholder="Ваше Имя" maxlength="30">
+                    <input type="email" v-model="form.email" required placeholder="Ваш Email" maxlength="30">
+                    <div class="form__textarea">
+                        <textarea v-model="form.description" placeholder="Напишите нам" required auto-resize maxlength="300"></textarea>
+                    </div>
+                    <button type="submit" class="btn">ОТПРАВИТЬ</button>
+                </form>
+                <div v-if="submitted" class="form__submitted">
+                    <div>Ваше сообщение отрпавлено. <br>В ближайщее время с вами <br>свяжется наш менеджер.</div>
                 </div>
-                <button type="submit" class="btn">ОТПРАВИТЬ</button>
-            </form>
-            <div v-if="submitted" class="form__submitted">
-                <div>Ваше сообщение отрпавлено. <br>В ближайщее время с вами <br>свяжется наш менеджер.</div>
-            </div>
-            <div class="form__info">
-                <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" class="form__info_item" target="_blank">
+                <div class="form__info">
+                    <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" class="form__info_item" target="_blank">
                     <img src="img/svg/Map-Pin.svg" alt="">г. Киев <br>ул. Мельникова 81А 
                 </a>
-                <div class="form__info_item">
-                    <img src="img/svg/Phone.svg" alt="">
-                    <div>  
-                        <a href="tel:+380676546085">+380 67 654 60 85 </a>
-                        <a href="tel:+380444656402">+380 44 465 64 02</a>
+                    <div class="form__info_item">
+                        <img src="img/svg/Phone.svg" alt="">
+                        <div>
+                            <a href="tel:+380676546085">+380 67 654 60 85 </a>
+                            <a href="tel:+380444656402">+380 44 465 64 02</a>
+                        </div>
                     </div>
+                    <a href="mailto:office@alfapolymer.com.ua" class="form__info_item"><img src="img/svg/Mail.svg" alt="">office@alfapolymer.com.ua</a>
                 </div>
-                <a href="mailto:office@alfapolymer.com.ua" class="form__info_item"><img src="img/svg/Mail.svg" alt="">office@alfapolymer.com.ua</a>
             </div>
         </div>
     </template>
     <template id="menu-template">
-        <div class="mobile-menu">        
+        <div class="mobile-menu">
             <div class="burger" @click="toggle()">
-                <div>                
+                <div>
                     <div class="burger__line"></div>
                     <div class="burger__line"></div>
                     <div class="burger__line"></div>
