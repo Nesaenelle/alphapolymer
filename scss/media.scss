@@ -506,6 +506,7 @@
                     height: 60px;
                 }
                 form {
+                    padding-left: 30px!important;
                     input,
                     textarea {
                         max-height: 60px;
@@ -559,7 +560,7 @@
 
                     &:last-child {
                         margin-top: 10px;
-                        line-height: 28px;
+                        line-height: 22px;
                     }
                 }
             }
