@@ -3,6 +3,7 @@ var langState$ = new rxjs.BehaviorSubject();
 var product$ = new rxjs.BehaviorSubject();
 var products$ = new rxjs.BehaviorSubject();
 var resources$ = new rxjs.BehaviorSubject();
+var fromProduct$ = new rxjs.BehaviorSubject();
 
 function defaultLanguage() {
     // window.location.hash = 'ru';
@@ -100,6 +101,7 @@ Vue.component('app-product', {
     methods: {
         goTo: function(id) {
             jQuery(".main").moveTo(id);
+            fromProduct$.next(this.product);
         },
         prev: function() {
             var index = product$.getValue();
@@ -141,11 +143,11 @@ Vue.component('app-contacts', {
             }
         });
 
-        product$.subscribe(function(res) {
-            if (!res) return;
-            var product = products$.getValue().data.filter(function(r){ return r.id == res})[0];
+        fromProduct$.subscribe(function(product) {
             if (product) {
                 self.product = product;
+            } else {
+                self.product = null;
             }
         });
     },
@@ -186,6 +188,7 @@ Vue.component('app-menu', {
     methods: {
         goTo: function(id) {
             jQuery(".main").moveTo(id);
+            fromProduct$.next(null);
             this.menuIsActivated = false;
         },
         toggle: function() {
@@ -254,6 +257,7 @@ var app = new Vue({
     methods: {
         goTo: function(id, productId) {
             jQuery(".main").moveTo(id);
+            fromProduct$.next(null);
             if (productId) {
                 product$.next(productId);
             }
