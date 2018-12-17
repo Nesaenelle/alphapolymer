@@ -41,7 +41,7 @@
         </aside>
         <main class="main">
             <section class="home-section">
-                <h1>Прямые Поставки <br>полимерного сырья <br><span>со всего мира</span></h1>
+                <h1 v-html="Resources.main_text"></h1>
             </section>
             <section class="products-section" data-swipe id="products">
                 <div class="product-list">
@@ -103,14 +103,14 @@
                     </a>
                     <a href="#6" @click="goTo(6, 2)" class="product-list__item">
                         <div class="product-list__item_number">09</div>
-                        <div class="product-list__item_title">HIPS<sup>вторичный</sup></div>
+                        <div class="product-list__item_title">HIPS<sup>{{Resources.second_used}}</sup></div>
                         <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Ударопрочный полистирол</div>
                         <div class="product-list__item_name">High Impact PolyStyrene</div>
                         <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
                     </a>
                     <a href="#6" @click="goTo(6, 3)" class="product-list__item">
                         <div class="product-list__item_number">10</div>
-                        <div class="product-list__item_title">GPPS<sup>вторичный</sup></div>
+                        <div class="product-list__item_title">GPPS<sup>{{Resources.second_used}}</sup></div>
                         <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Полистирол общего назначения</div>
                         <div class="product-list__item_name">General Purpose Polystyrene</div>
                         <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
@@ -122,7 +122,7 @@
             </section>
             <section class="partners-section">
                 <div class="partners-block">
-                    <div class="partners-block__text">He’s not a word hero. He’s a word hero because he was captured. I like text that wasn’t captured. I write the best placeholder text, and I&apos;m the biggest developer on the web by far... While that&apos;s mock-ups and this is politics, are they really so different? You’re disgusting. I know words. I have the best words.</div>
+                    <div class="partners-block__text">{{Resources.partners_text}}</div>
                     <div class="partners-block__countries" v-cloak>
                         <div class="partners-block__countries_item"><img src="img/az.svg" alt=""><span>{{Resources.azerb}}</span></div>
                         <div class="partners-block__countries_item"><img src="img/by.svg" alt=""><span>{{Resources.belarus}}</span></div>
