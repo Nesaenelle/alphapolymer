@@ -127,14 +127,33 @@ Vue.component('app-contacts', {
     data: function() {
         return {
             form: {},
+            Resources: {},
+            product: null,
             submitted: false
         }
     },
     template: '#contacts-template',
     mounted: function() {
+        var self = this;
+        resources$.subscribe(function(res) {
+            if (res) {
+                self.Resources = res;
+            }
+        });
 
+        product$.subscribe(function(res) {
+            if (!res) return;
+            var product = products$.getValue().data.filter(function(r){ return r.id == res})[0];
+            if (product) {
+                self.product = product;
+            }
+        });
     },
     methods: {
+        goTo: function() {
+            jQuery(".main").moveTo('6');
+            product$.next(this.product.id);
+        },
         submit: function() {
             // this.form;
             this.submitted = true;

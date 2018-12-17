@@ -157,6 +157,11 @@ a {
     cursor: pointer;
     margin-top: 20px;
     max-width: 350px;
+    text-transform: uppercase;
+    transition: 0.2s;
+    &:hover {
+        background: darken(#eb3f57, 10%);
+    }
 }
 
 
@@ -375,7 +380,20 @@ a {
         width: 843px;
         padding: 47px 44px 0 44px;
         flex-wrap: wrap;
-
+        
+        &__product {
+            position: absolute;top: 0;
+            left:0;
+            background: #eb3f57;
+            color: #fff;
+            padding: 10px 30px;
+            transform: translateX(-100%);
+            cursor: pointer;
+            transition: 0.2s;
+            &:hover {
+                background: darken(#eb3f57, 10%);
+            }
+        }
         &__wrapper {
             width: 100%;
             justify-content: space-between;

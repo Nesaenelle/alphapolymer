@@ -62,7 +62,12 @@
                 width: 300px;
                 padding-bottom: 80px;
             }
-
+            
+            &__product {
+                transform: translateY(-100%);
+                left: auto;
+                right: 0;
+            }
             &__title {
                 margin-bottom: 0;
             }
