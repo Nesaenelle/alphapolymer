@@ -198,14 +198,14 @@
     <template id="contacts-template">
         <div class="form">
             <div v-if="product" class="form__product" @click="goTo(product.id)"><img src="img/svg/Chevron-left.svg" alt="">{{product.title}}</div>
-            <div class="form__title desktop" v-if="!submitted">Вы можете связаться с нами любым доступным способом</div>
+            <div class="form__title desktop" v-if="!submitted">{{Resources.contacts_text}}</div>
             <div class="form__wrapper">
                 <form @submit.prevent="submit()" v-if="!submitted">
-                    <div class="form__title mobile" v-if="!submitted">Вы можете связаться с нами любым доступным способом</div>
-                    <input type="text" v-model="form.name" required placeholder="Ваше Имя" maxlength="30">
-                    <input type="email" v-model="form.email" required placeholder="Ваш Email" maxlength="30">
+                    <div class="form__title mobile" v-if="!submitted">{{Resources.contacts_text}}</div>
+                    <input type="text" v-model="form.name" required :placeholder="Resources.name" maxlength="30">
+                    <input type="email" v-model="form.email" required :placeholder="Resources.email" maxlength="30">
                     <div class="form__textarea">
-                        <textarea v-model="form.description" placeholder="Напишите нам" required auto-resize maxlength="300"></textarea>
+                        <textarea v-model="form.description" :placeholder="Resources.text_us" required auto-resize maxlength="300"></textarea>
                     </div>
                     <button type="submit" class="btn">{{Resources.submit}}</button>
                 </form>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="form__info">
                     <a href="http://maps.google.com/?q=1200 Pennsylvania Ave SE, Washington, District of Columbia, 20003" class="form__info_item" target="_blank">
-                    <img src="img/svg/Map-Pin.svg" alt="">г. Киев <br>ул. Мельникова 81А 
+                    <img src="img/svg/Map-Pin.svg" alt=""><span v-html="Resources.address"></span>
                 </a>
                     <div class="form__info_item">
                         <img src="img/svg/Phone.svg" alt="">
