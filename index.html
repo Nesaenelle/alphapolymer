@@ -25,7 +25,7 @@
         </header>
         <aside class="sidebar">
             <div class="sidebar__phone">
-                <a href="tel:">
+                <a href="tel:+380676546085">
                     <img src="img/svg/Phone-white.svg" alt="">
                 </a>
             </div>
@@ -45,80 +45,80 @@
             </section>
             <section class="products-section" data-swipe id="products">
                 <div class="product-list">
-                    <div class="product-list__item">
+                    <a href="#6" @click="goTo(6, 1)" class="product-list__item">
                         <div class="product-list__item_number">01</div>
                         <div class="product-list__item_title">EPS</div>
-                        <div class="product-list__item_name pink">Вспененный полистирол </div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Вспененный полистирол </div>
                         <div class="product-list__item_name">Expandable Polystyrene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 1)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 2)" class="product-list__item">
                         <div class="product-list__item_number">02</div>
                         <div class="product-list__item_title">HIPS</div>
-                        <div class="product-list__item_name pink"> Ударопрочный полистирол</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'"> Ударопрочный полистирол</div>
                         <div class="product-list__item_name">High Impact PolyStyrene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 2)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 3)" class="product-list__item">
                         <div class="product-list__item_number">03</div>
                         <div class="product-list__item_title">GPPS</div>
-                        <div class="product-list__item_name pink"> Полистирол общего назначения</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'"> Полистирол общего назначения</div>
                         <div class="product-list__item_name">General Purpose Polystyrene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 3)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 4)" class="product-list__item">
                         <div class="product-list__item_number">04</div>
                         <div class="product-list__item_title">PP</div>
-                        <div class="product-list__item_name pink"> Полипропилен</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'"> Полипропилен</div>
                         <div class="product-list__item_name">Polypropylene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 4)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 5)" class="product-list__item">
                         <div class="product-list__item_number">05</div>
                         <div class="product-list__item_title">LLDPE</div>
-                        <div class="product-list__item_name pink">Полиэтилен низкой плотности</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Полиэтилен низкой плотности</div>
                         <div class="product-list__item_name">Linear low-density polyethylene </div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 5)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 6)" class="product-list__item">
                         <div class="product-list__item_number">06</div>
                         <div class="product-list__item_title">HDPE</div>
-                        <div class="product-list__item_name pink">Полиэтилен высокого давления</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Полиэтилен высокого давления</div>
                         <div class="product-list__item_name">General Purpose Polystyrene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 6)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 7)" class="product-list__item">
                         <div class="product-list__item_number">07</div>
                         <div class="product-list__item_title">LDPE</div>
-                        <div class="product-list__item_name pink">Полиэтилен низкого давления</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Полиэтилен низкого давления</div>
                         <div class="product-list__item_name">Low density polyethylene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 7)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 8)" class="product-list__item">
                         <div class="product-list__item_number">08</div>
                         <div class="product-list__item_title">Chalk</div>
-                        <div class="product-list__item_name pink">Меловая добавка</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Меловая добавка</div>
                         <div class="product-list__item_name">Chank Compount</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 8)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 2)" class="product-list__item">
                         <div class="product-list__item_number">09</div>
                         <div class="product-list__item_title">HIPS<sup>вторичный</sup></div>
-                        <div class="product-list__item_name pink">Ударопрочный полистирол</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Ударопрочный полистирол</div>
                         <div class="product-list__item_name">High Impact PolyStyrene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 2)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
-                    <div class="product-list__item">
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
+                    <a href="#6" @click="goTo(6, 3)" class="product-list__item">
                         <div class="product-list__item_number">10</div>
                         <div class="product-list__item_title">GPPS<sup>вторичный</sup></div>
-                        <div class="product-list__item_name pink">Полистирол общего назначения</div>
+                        <div class="product-list__item_name pink" v-if="langState$.value !== 'en'">Полистирол общего назначения</div>
                         <div class="product-list__item_name">General Purpose Polystyrene</div>
-                        <div class="product-list__item_link"><a href="#6" @click="goTo(6, 3)"><img src="img/svg/Arrow-right.svg" alt=""></a></div>
-                    </div>
+                        <div class="product-list__item_link"><img src="img/svg/Arrow-right.svg" alt=""></div>
+                    </a>
                 </div>
             </section>
             <section class="about-section">
-                <div class="text-block"><span>{{Resources.about_text}}</span></div>
+                <div class="text-block"><span v-html="Resources.about_text"></span></div>
             </section>
             <section class="partners-section">
                 <div class="partners-block">
@@ -179,19 +179,21 @@
             <div class="product__bg" v-if="product.url">
                 <img v-bind:src="'img/' + product.url" alt="">
             </div>
-                <div class="product__switcher">
-                    <div class="product__switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
-                        <div class="product__switcher-name">{{product.title}}</div>
-                        <div class="product__switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
-                        </div>
-                        <div class="product__info">
-                            <div class="product__info_title">{{product.title}}</div>
-                            <div class="product__info_name" v-if="langState$.value !== 'en'">{{product.name}}</div>
-                            <div class="product__info_small-name">{{product.eng_name}}</div>
-                            <div class="product__info_descr" v-html="product.descr"></div>
-                            <a href="#5" @click="goTo(5)"><button class="btn">СВЯЗАТЬСЯ С НАМИ</button></a>
-                        </div>
-                    </div>
+            <div class="product__switcher">
+                <div class="product__switcher-left" @click="prev()"><img src="img/svg/Chevron-left.svg" alt=""></div>
+                <div class="product__switcher-name">{{product.title}}</div>
+                 <div class="product__switcher-right" @click="next()"><img src="img/svg/Chevron-right.svg" alt=""></div>
+            </div>
+            <div class="product__info">
+                <div class="product__info_title">{{product.title}}</div>
+                <div class="product__info_name" v-if="langState$.value !== 'en'">{{product.name}}</div>
+                <div class="product__info_small-name">{{product.eng_name}}</div>
+                <div class="product__info_descr" v-if="langState$.value === 'ru'" v-html="product.descr"></div>
+                <div class="product__info_descr" v-if="langState$.value === 'en'" v-html="product.descr_en"></div>
+                <div class="product__info_descr" v-if="langState$.value === 'ua'" v-html="product.descr"></div>
+                <a href="#5" @click="goTo(5)"><button class="btn">СВЯЗАТЬСЯ С НАМИ</button></a>
+            </div>
+        </div>
     </template>
     <template id="contacts-template">
         <div class="form">

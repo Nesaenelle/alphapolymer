@@ -58,7 +58,7 @@ Vue.component('app-language', {
         langState$
             .subscribe(function(res) {
                 if (!res) return;
-                this.activeLang = res;
+                self.activeLang = res;
             });
         window.addEventListener('click', function(e) {
             if (!self.$el.contains(e.target)) {
@@ -182,7 +182,8 @@ Vue.component('app-menu', {
 var app = new Vue({
     el: '#app',
     data: {
-        Resources: {}
+        Resources: {},
+        langState$: langState$
     },
     mounted: function() {
         var self = this;
