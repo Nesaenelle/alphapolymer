@@ -386,10 +386,21 @@ a {
             left:0;
             background: #eb3f57;
             color: #fff;
-            padding: 10px 30px;
+            padding: 7px 30px;
             transform: translateX(-100%);
             cursor: pointer;
             transition: 0.2s;
+            width: 160px;
+            font-size: 20px;
+            text-align: center;
+            img {
+                width: 25px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 6px;
+                margin: auto;
+            }
             &:hover {
                 background: darken(#eb3f57, 10%);
             }
