@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Check</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M29.1666669,8.68053518e-08 C13.0583616,8.68053444e-08 8.68055849e-08,13.0583616 8.68055849e-08,29.1666669 C8.68055812e-08,45.2749721 13.0583616,58.3333337 29.1666669,58.3333337 C45.2749721,58.3333337 58.3333337,45.2749721 58.3333337,29.1666669 C58.3333337,13.0583616 45.2749721,8.68053629e-08 29.1666669,8.68053518e-08 Z M29.1666669,54.166667 C15.3595481,54.166667 4.16666677,42.9737857 4.16666677,29.1666669 C4.16666677,15.3595481 15.3595481,4.16666677 29.1666669,4.16666677 C42.9737857,4.16666677 54.166667,15.3595481 54.166667,29.1666669 C54.166667,35.7970791 51.532746,42.155927 46.8443365,46.8443365 C42.155927,51.532746 35.7970791,54.166667 29.1666669,54.166667 Z" id="path-1"></path>
+        <polygon id="path-3" points="253.5 263.625 249.333334 259.708334 246.5 262.75 253.916667 269.708334 270.375 249.208334 267.125 246.625"></polygon>
+    </defs>
+    <g id="z" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_Alpha_contact-Copy-2" transform="translate(-785.000000, -594.000000)">
+            <g id="Icons/Check" transform="translate(765.000000, 574.000000)">
+                <g id="Group" transform="translate(-208.333334, -208.333334)">
+                    <g id="target" transform="translate(0.000000, -0.000000)">
+                        <g id="Color/red" transform="translate(229.166667, 229.166667)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Mask" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+                            <g mask="url(#mask-2)" fill="#EB3F57" fill-rule="nonzero" id="Rectangle">
+                                <g transform="translate(-229.166666, -229.166666)">
+                                    <rect x="0" y="0" width="517" height="517"></rect>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Color/red" transform="translate(0.000000, -0.000000)">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <use id="Mask" fill="#000000" xlink:href="#path-3"></use>
+                            <g id="Color/white" mask="url(#mask-4)" fill="#FFFFFF" fill-rule="nonzero">
+                                <g transform="translate(12.500000, -4.166666)" id="Rectangle">
+                                    <rect x="0" y="0" width="517" height="517"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

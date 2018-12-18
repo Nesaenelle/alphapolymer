@@ -422,11 +422,20 @@ a {
         &__submitted {
             width: 55%;
             position: relative;
-            padding: 40px;
+            // padding: 40px;
             color: #fff;
             display: flex;
             align-items: center;
             text-align: center;
+            flex-wrap: wrap;
+                padding: 67px 40px 90px 40px;
+            img {
+                display: block;
+                margin: auto;
+            }
+            > div {
+                width: 100%;
+            }
         }
 
         .mobile {

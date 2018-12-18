@@ -525,6 +525,10 @@
             }
             &__submitted {
                 width: 100%;
+                padding: 40px;
+                img {
+                    margin-bottom: 20px;
+                }
             }
             form {
                 width: 100%;
