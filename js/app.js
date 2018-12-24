@@ -255,8 +255,8 @@ var app = new Vue({
         });
     },
     methods: {
-        goTo: function(id, productId) {
-            jQuery(".main").moveTo(id);
+        goTo: function(id, productId, noTransition) {
+            jQuery(".main").moveTo(id, noTransition);
             fromProduct$.next(null);
             if (productId) {
                 product$.next(productId);

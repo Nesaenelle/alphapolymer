@@ -92,29 +92,31 @@
         quietPeriod = 500,
         paginationList = "";
 
-    $.fn.transformPage = function(settings, pos, index) {
+    $.fn.transformPage = function(settings, pos, index, noTransition) {
       if (typeof settings.beforeMove == 'function') settings.beforeMove(index);
 
       // Just a simple edit that makes use of modernizr to detect an IE8 browser and changes the transform method into
     	// an top animate so IE8 users can also use this script.
+
+      var animTime = noTransition ? 0 : settings.animationTime;
     	if($('html').hasClass('ie8')){
         if (settings.direction == 'horizontal') {
           var toppos = (el.width()/100)*pos;
-          $(this).animate({left: toppos+'px'},settings.animationTime);
+          $(this).animate({left: toppos+'px'},animTime);
         } else {
           var toppos = (el.height()/100)*pos;
-          $(this).animate({top: toppos+'px'},settings.animationTime);
+          $(this).animate({top: toppos+'px'},animTime);
         }
     	} else{
     	  $(this).css({
     	    "-webkit-transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
-         "-webkit-transition": "all " + settings.animationTime + "ms " + settings.easing,
+         "-webkit-transition": "all " + animTime + "ms " + settings.easing,
          "-moz-transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
-         "-moz-transition": "all " + settings.animationTime + "ms " + settings.easing,
+         "-moz-transition": "all " + animTime + "ms " + settings.easing,
          "-ms-transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
-         "-ms-transition": "all " + settings.animationTime + "ms " + settings.easing,
+         "-ms-transition": "all " + animTime + "ms " + settings.easing,
          "transform": ( settings.direction == 'horizontal' ) ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
-         "transition": "all " + settings.animationTime + "ms " + settings.easing
+         "transition": "all " + animTime + "ms " + settings.easing
     	  });
     	}
       $(this).one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
@@ -190,7 +192,7 @@
       el.transformPage(settings, pos, next.data("index"));
     }
 
-    $.fn.moveTo = function(page_index) {
+    $.fn.moveTo = function(page_index, noTransition) {
       current = $(settings.sectionContainer + ".active")
       next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
       if(next.length > 0) {
@@ -208,7 +210,7 @@
             var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (page_index - 1);
             history.pushState( {}, document.title, href );
         }
-        el.transformPage(settings, pos, page_index);
+        el.transformPage(settings, pos, page_index, noTransition);
       }
     }
 
