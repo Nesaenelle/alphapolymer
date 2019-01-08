@@ -579,32 +579,45 @@ a {
             top: 0;
             left: 0;
             font-size: 20px;
-            padding: 4px;
+    
             left: 45%;
             position: absolute;
             color: #fff;
             z-index: 999;
+            width: 180px;
+            justify-content: space-between;
+            align-items:center;
 
-            &-left {
-                width: 20px;
+            &-left {        padding: 4px;
+                width: 25px;
                 text-align: center;
                 cursor: pointer;
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                transition: 0.2s;
+                &:hover {
+                    background: darken(#eb3f57, 10%);
+                }
             }
 
-            &-right {
-                width: 20px;
+            &-right {        padding: 4px;
+                width: 25px;
                 text-align: center;
                 cursor: pointer;
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                transition: 0.2s;
+                &:hover {
+                    background: darken(#eb3f57, 10%);
+                }
             }
 
             &-name {
-                padding: 0 40px;
+                width: 130px;
+                text-align: center;
+                // padding: 0 40px;
             }
 
             img {

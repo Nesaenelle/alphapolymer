@@ -107,7 +107,7 @@ Vue.component('app-product', {
             var index = product$.getValue();
             index--;
             if (index <= 0) {
-                index = 1;
+                index = products$.getValue().data.length;
             }
 
             product$.next(index);
@@ -116,8 +116,8 @@ Vue.component('app-product', {
             var index = product$.getValue();
             index++;
 
-            if (index >= products$.getValue().data.length) {
-                index = products$.getValue().data.length;
+            if (index > products$.getValue().data.length) {
+                index = 1;//products$.getValue().data.length;
             }
 
             product$.next(index);
@@ -235,7 +235,9 @@ var app = new Vue({
                 });
 
                 if (index == 6) {
-
+                    $('.pagination').hide();
+                } else {
+                    $('.pagination').show();
                 }
             },
             afterMove: function(index) {
