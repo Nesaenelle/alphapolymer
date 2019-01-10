@@ -478,7 +478,9 @@
             }
 
             &__switcher {
-                display: none;
+                // display: none;
+                right: 0;
+                top: 20vh;
             }
 
             .btn {
@@ -622,6 +624,9 @@
                 height: 15px;
             }
         }
+    }
+    .product-item-section .product__switcher {
+        width: 100%;
     }
 }
 
